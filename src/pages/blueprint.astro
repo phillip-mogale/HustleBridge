@@ -1,0 +1,10 @@
+---
+import App from '../layouts/App.astro';
+---
+<App name="blueprint" onboarding={true}>
+  <script>
+    import { boot } from '../scripts/shell.js';
+    import view from '../scripts/views/blueprint.js';
+    boot(view, 'blueprint');
+  </script>
+</App>

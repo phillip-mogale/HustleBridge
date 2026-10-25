@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hustlebridge",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // Static files are served directly by Cloudflare. The Worker only runs for the API.
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    // AI provider settings. Keys are secrets: `npx wrangler secret put AI_API_KEY`
+    "AI_PROVIDER": "anthropic",          // "anthropic" or "openai" (any OpenAI-compatible endpoint)
+    "AI_MODEL": "claude-haiku-5-5",     // confirm the current model name with your provider before launch
+    "AI_BASE_URL": "",
+    "AI2_PROVIDER": "",                  // optional second provider, tried if the first fails
+    "AI2_MODEL": "",
+    "AI2_BASE_URL": ""
+  },
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><defs>
+<linearGradient id="icL" gradientUnits="userSpaceOnUse" x1="0" y1="205" x2="0" y2="783"><stop offset="0" stop-color="#E4D9FF"/><stop offset=".22" stop-color="#B79DFF"/><stop offset=".55" stop-color="#6B3FD4"/><stop offset="1" stop-color="#2A1566"/></linearGradient>
+<linearGradient id="icR" gradientUnits="userSpaceOnUse" x1="0" y1="246" x2="0" y2="772"><stop offset="0" stop-color="#FFD6E5"/><stop offset=".25" stop-color="#FF9EC0"/><stop offset=".58" stop-color="#EE4A80"/><stop offset="1" stop-color="#A3174F"/></linearGradient>
+<linearGradient id="icRing" gradientUnits="userSpaceOnUse" x1="160" y1="0" x2="864" y2="0"><stop offset="0" stop-color="#6B3FD4"/><stop offset=".45" stop-color="#B79DFF"/><stop offset=".55" stop-color="#FF9EC0"/><stop offset="1" stop-color="#EE4A80"/></linearGradient>
+<linearGradient id="icFade" gradientUnits="userSpaceOnUse" x1="0" y1="430" x2="0" y2="700"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+<mask id="icM" maskUnits="userSpaceOnUse" x="100" y="100" width="800" height="700"><rect x="100" y="100" width="800" height="700" fill="url(#icFade)"/></mask>
+<linearGradient id="icSide" gradientUnits="userSpaceOnUse" x1="305" y1="782" x2="825" y2="418"><stop offset="0" stop-color="#6B3FD4"/><stop offset=".4" stop-color="#B79DFF"/><stop offset=".75" stop-color="#FF9EC0"/><stop offset="1" stop-color="#FFE0EA"/></linearGradient>
+<linearGradient id="icRim" gradientUnits="userSpaceOnUse" x1="125" y1="778" x2="825" y2="418"><stop offset="0" stop-color="#B79DFF"/><stop offset=".5" stop-color="#E4D9FF"/><stop offset="1" stop-color="#FFB3CC"/></linearGradient>
+<linearGradient id="icD" gradientUnits="userSpaceOnUse" x1="400" y1="640" x2="760" y2="410"><stop offset="0" stop-color="#FF6F9D"/><stop offset="1" stop-color="#FFC2D6"/></linearGradient>
+<linearGradient id="icGlow" gradientUnits="userSpaceOnUse" x1="125" y1="778" x2="470" y2="540"><stop offset="0" stop-color="#8B63F0" stop-opacity=".85"/><stop offset=".6" stop-color="#6B3FD4" stop-opacity=".18"/><stop offset="1" stop-color="#6B3FD4" stop-opacity="0"/></linearGradient>
+<radialGradient id="icSun" gradientUnits="userSpaceOnUse" cx="700" cy="385" r="42"><stop offset="0" stop-color="#FFE9F0" stop-opacity=".95"/><stop offset="1" stop-color="#FF9EC0" stop-opacity="0"/></radialGradient>
+</defs><rect width="1024" height="1024" rx="224" fill="#1B1030"/><g transform="translate(162.4 162.4) scale(0.92) translate(-114 -74)">
+<g mask="url(#icM)"><circle cx="512" cy="476" r="352" fill="none" stroke="url(#icRing)" stroke-width="12"/></g>
+<path d="M272 270L396 208Q404 204 404 213V770Q404 783 391 783H285Q272 783 272 770Z" fill="url(#icL)"/>
+<path d="M272 270L396 208Q404 204 404 213V420Q330 380 272 470Z" fill="#fff" opacity=".22"/>
+<path d="M602 322L736 250Q748 244 748 257V760Q748 772 736 772H614Q602 772 602 760Z" fill="url(#icR)"/>
+<path d="M602 322L736 250Q748 244 748 257V430Q660 470 602 600Z" fill="#fff" opacity=".18"/>
+<circle cx="700" cy="385" r="42" fill="url(#icSun)"/>
+<path d="M825 418C660 435 440 575 375 783H305C410 545 650 415 825 418Z" fill="url(#icSide)"/>
+<path d="M125 778C240 560 430 365 825 418C650 415 410 545 305 779Z" fill="#3A2872"/>
+<path d="M125 778C240 560 430 365 825 418C650 415 410 545 305 779Z" fill="url(#icGlow)"/>
+<path d="M125 778C240 560 430 365 825 418" fill="none" stroke="url(#icRim)" stroke-width="7" stroke-linecap="round"/>
+<g fill="url(#icD)">
+<path transform="translate(372 580) rotate(-38) skewX(-22)" d="M-44 -11H44V11H-44Z"/>
+<path transform="translate(470 504) rotate(-31) skewX(-24)" d="M-37 -8.7H37V8.7H-37Z"/>
+<path transform="translate(553 462) rotate(-22) skewX(-24)" d="M-31 -7H31V7H-31Z"/>
+<path transform="translate(626 438) rotate(-15) skewX(-24)" d="M-26 -5.5H26V5.5H-26Z"/>
+<path transform="translate(690 424) rotate(-9) skewX(-24)" d="M-22 -4.2H22V4.2H-22Z"/>
+<path transform="translate(748 418) rotate(-3) skewX(-24)" d="M-18 -2.8H18V2.8H-18Z"/>
+</g></g></svg>

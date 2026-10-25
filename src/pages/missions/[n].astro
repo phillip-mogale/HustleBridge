@@ -1,0 +1,12 @@
+---
+import App from '../../layouts/App.astro';
+export function getStaticPaths() { return [1, 2, 3, 4].map((n) => ({ params: { n: String(n) } })); }
+const { n } = Astro.params;
+---
+<App name="mission" title={`Mission ${n}`} onboarding={false}>
+  <script>
+    import { boot } from '../../scripts/shell.js';
+    import { one } from '../../scripts/views/missions.js';
+    boot(one, 'mission', location.pathname.split('/').pop());
+  </script>
+</App>

@@ -1,0 +1,10 @@
+---
+import App from '../layouts/App.astro';
+---
+<App name="missions" onboarding={false}>
+  <script>
+    import { boot } from '../scripts/shell.js';
+    import { list as view } from '../scripts/views/missions.js';
+    boot(view, 'missions');
+  </script>
+</App>

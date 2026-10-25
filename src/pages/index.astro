@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import { LOGO } from '../lib/icons.js';
+---
+<Base title="HustleBridge | Practise the business. Build the evidence." description="A flight simulator for your small business. Make the decisions, see what they do to your numbers, and build proof you can show a mentor or a funder." bodyClass="">
+<div id="landing">
+  <header class="lnav"><div class="wrap lnav-in">
+    <a class="logo" href="#top" aria-label="HustleBridge home"><span data-logo set:html={LOGO}></span>HustleBridge</a>
+    <nav aria-label="Sections"><a href="#how">How it works</a><a href="#journey">The journey</a><a href="#bridge">Progress</a><a href="#honesty">Our promises</a></nav>
+    <button class="icon-btn" data-theme-toggle aria-label="Switch colour theme"></button>
+    <button class="btn sm ghost" data-go="login" data-arg="in">Sign in</button>
+    <button class="btn sm pink" data-go="demo">Try the demo</button>
+  </div></header>
+
+  <section class="hero" id="top">
+    <svg class="hero-arc" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="draw" d="M-40 640 C 260 140, 1020 80, 1480 520" fill="none" stroke="#B79DFF" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-40 640 C 260 140, 1020 80, 1480 520" fill="none" stroke="#B79DFF" stroke-opacity=".14" stroke-width="14" stroke-linecap="round"/>
+      
+    </svg>
+    <div class="wrap hero-in">
+      <div>
+        <h1>Test your business before it costs you anything.</h1>
+        <p class="lead">HustleBridge is a flight simulator for your small business. Make the decisions, see what they do to your numbers, and build proof you can show a mentor or a funder.</p>
+        <div class="cta-row">
+          <button class="btn pink" data-go="demo">Try the demo business</button>
+          <button class="btn ghost" data-go="setup">Start with my idea</button>
+        </div>
+        <button class="linkish light" data-tour style="margin-top:14px">Take the 60-second tour</button>
+        <div class="trust">
+          <span data-i="check"></span>
+        </div>
+      </div>
+      <div class="ptest" id="ptest" aria-label="Interactive price test">
+        <p class="pt-label">Nomsa charges for one braiding style</p>
+        <div class="pt-price num" id="pt-price">R350</div>
+        <label class="sr" for="pt-range">Price per style</label>
+        <input class="range" id="pt-range" type="range" min="200" max="600" step="5" value="350">
+        <div class="pt-result" id="pt-result"><b class="num" id="pt-big">−R125</b><span id="pt-unit">after hair, transport and her 4 hours</span></div>
+        <p class="note">Illustrative figures. Hair, transport and her time cost R475 a style.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band own" id="own"><div class="wrap">
+    <div class="sec-head"><h2>Now try it with your business.</h2><p>Type your own numbers. Nothing is saved. In 20 seconds you will see what one job really costs you.</p></div>
+    <div class="own-grid">
+      <form class="own-in" id="own-form" novalidate onsubmit="return false">
+        <div class="field"><label for="o-price">You charge per job (R)</label><input class="input" id="o-price" type="number" inputmode="numeric" min="0" value="350"></div>
+        <div class="field"><label for="o-hours">Hours one job takes</label><input class="input" id="o-hours" type="number" inputmode="decimal" min="0.5" step="0.5" value="4"></div>
+        <div class="field"><label for="o-mat">Materials and travel per job (R)</label><input class="input" id="o-mat" type="number" inputmode="numeric" min="0" value="160"></div>
+        <div class="field"><label for="o-fixed">Other monthly costs, like data (R)</label><input class="input" id="o-fixed" type="number" inputmode="numeric" min="0" value="300"></div>
+        <div class="field wide"><label for="o-goal">What you want to take home each month (R)</label><input class="input" id="o-goal" type="number" inputmode="numeric" min="0" value="6000"></div>
+        <p class="fine wide" style="grid-column:1/-1;margin:0">We assume 80 hours a month you can sell. You can change that in your Blueprint.</p>
+      </form>
+      <div class="own-out" id="own-out" aria-live="polite">
+        <div><div class="o-lab">One job really costs you</div><div class="o-big num" id="o-cost">R475</div></div>
+        <div class="o-line"><span>You charge</span><b id="o-pr">R350</b></div>
+        <div class="o-verdict" id="o-verdict"></div>
+        <div class="o-line"><span>Jobs a month to reach your goal</span><b id="o-need"></b></div>
+        <div class="o-line"><span>Jobs you have hours for</span><b id="o-cap"></b></div>
+        <button class="btn pink" id="o-go" type="button">Build my Blueprint from these numbers</button>
+        <small>Your Blueprint is your business on one page. We will add the rest in a short chat.</small>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band" id="why"><div class="wrap statgrid">
+    <div><div class="bignum num">47.4%</div><p class="statlab">of South Africans aged 15 to 34 were unemployed in the second quarter of 2026. That is 5.0 million young people.</p></div>
+    <div class="statcopy"><p>Across all workers that quarter, formal-sector jobs fell by 41 000 while informal-sector jobs rose by 34 000. Starting something small is one of the few routes left open, yet most people have no safe place to test an idea before it costs them money.</p>
+      <p class="src">Source: <a href="https://www.statssa.gov.za/?p=19804" target="_blank" rel="noopener">Statistics South Africa, Quarterly Labour Force Survey, Q2 2026</a></p>
+      <h3>Who it helps first</h3>
+      <ul><li><span data-i="check"></span>Young people with a skill and no start-up money</li><li><span data-i="check"></span>Students on campus entrepreneurship courses, our first pilot</li><li><span data-i="check"></span>Programmes and incubators that want applicants who are ready</li></ul></div>
+  </div></section>
+
+  <section class="band" id="how"><div class="wrap">
+    <div class="sec-head"><h2>Practise. Understand. Connect.</h2>
+      <p>Most courses explain business. HustleBridge lets you run yours, on paper, with your own numbers, until you know what you are doing.</p></div>
+    <div class="pillars">
+      <article class="pillar p1"><div class="verb"><span data-i="sim"></span>Practise</div><h3>Face the week before it happens.</h3>
+        <p>A supplier raises prices. A client cancels. A quiet week arrives. Choose how to respond and see what it does to your margin and cash.</p>
+        <div class="mini"><div class="evt">Supplier raises prices by 20%</div>
+          <div class="opt"><i>A</i>Raise your price</div><div class="opt on"><i>B</i>Find another supplier</div><div class="opt"><i>C</i>Absorb the cost</div></div></article>
+      <article class="pillar p2"><div class="verb"><span data-i="price"></span>Understand</div><h3>See what each job really costs.</h3>
+        <p>Materials, transport, data, admin and your own hours, counted in plain language. Drag the price and watch your take-home change.</p>
+        <div class="mini"><div class="row"><span>Cost per style</span><b class="num">R475</b></div><div class="row"><span>You charge</span><b class="num">R350</b></div><div class="row"><span>Gap per style</span><b class="num" style="color:var(--protea)">−R125</b></div></div></article>
+      <article class="pillar p3"><div class="verb"><span data-i="opps"></span>Connect</div><h3>Walk in with evidence.</h3>
+        <p>Your work becomes a Venture Readiness Profile. Then browse real programmes, grants and shared resources, and see what to prepare first.</p>
+        <div class="mini"><div class="chips"><span class="tag self">Self-reported</span><span class="tag sim">Simulated</span><span class="tag ver">Verified</span></div>
+          <div class="row" style="margin-top:10px"><span>Incubator intake</span><span class="tag ver">Checked 12 Oct</span></div></div></article>
+    </div>
+  </div></section>
+
+  <section class="band" style="background:var(--card2)"><div class="wrap split">
+    <div class="sec-head"><h2>The AI sets it up. The calculator does the maths. You decide.</h2>
+      <p>Chat for two minutes about your business. HustleBridge drafts a Business Blueprint, and nothing is used until you have checked every number.</p>
+      <div class="rule3">
+        <div><b>AI</b><span>Asks a few questions and drafts your Blueprint. It never does the arithmetic.</span></div>
+        <div><b>Calculator</b><span>Plain, tested formulas calculate every result. You can check them by hand.</span></div>
+        <div><b>You</b><span>Edit the numbers, pick the responses and own the decisions.</span></div>
+      </div></div>
+    <div class="bpcard" aria-label="Sample Business Blueprint">
+      <h4>Nomsa's Business Blueprint <span class="tag self">Sample</span></h4>
+      <div class="bprow"><span class="k">Price per style</span><span class="v">R350</span><span class="tg"><span class="tag self">Stated by you</span></span></div>
+      <div class="bprow"><span class="k">Hours per style</span><span class="v">4 hours</span><span class="tg"><span class="tag self">Stated by you</span></span></div>
+      <div class="bprow"><span class="k">Transport per job</span><span class="v">R40</span><span class="tg"><span class="tag est">AI estimate, please check</span></span></div>
+      <div class="bprow"><span class="k">Billable hours a month</span><span class="v">80</span><span class="tg"><span class="tag est">AI estimate, please check</span></span></div>
+      <div class="bprow"><span class="k">Cost per style, calculated</span><span class="v">R475</span><span class="tg"><span class="tag calc">Calculated</span></span></div>
+    </div>
+  </div></section>
+
+  <section class="band" id="journey"><div class="wrap">
+    <div class="sec-head"><h2>From first chat to your next step.</h2><p>Eight steps, each one short enough for a lunch break.</p></div>
+    <ol class="route">
+      <li><h4>Arrive</h4><p>See what HustleBridge does and pick a starting point.</p></li>
+      <li><h4>Tell us about your business</h4><p>A short chat in your own words.</p></li>
+      <li><h4>Confirm your Blueprint</h4><p>Check and edit every number the AI drafted.</p></li>
+      <li><h4>Complete a mission</h4><p>Define a customer, or review a real offer and its costs.</p></li>
+      <li><h4>Make a decision</h4><p>Meet a simulated event and see the consequences.</p></li>
+      <li><h4>Understand pricing</h4><p>See how time and overheads change a sustainable quote.</p></li>
+      <li><h4>Review readiness</h4><p>Strengths, gaps and evidence in one profile.</p></li>
+      <li><h4>Find a next step</h4><p>Filter real support and prepare what you need.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="band" id="bridge" style="padding-top:0"><div class="wrap">
+    <div class="gamebox">
+      <div class="sec-head"><h2>Build the bridge one piece of evidence at a time.</h2>
+        <p>Each mission lays a span. Each decision you explain adds a piece of evidence. There are no points to chase. What you see grow is work you can show to someone else.</p></div>
+      <div class="bscroll" style="margin-top:24px"><div id="land-bridge"></div></div>
+      <div class="stamps">
+        <div class="stamp-i"><span class="tag self">Self-reported</span><p><b>What you told us</b>Your prices, hours and plans.</p></div>
+        <div class="stamp-i"><span class="tag sim">Simulated</span><p><b>What practice showed</b>Results the calculator worked out from your numbers.</p></div>
+        <div class="stamp-i"><span class="tag ver">Verified</span><p><b>What was checked</b>Facts confirmed against an official source, with a date.</p></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band" style="background:var(--card2)"><div class="wrap">
+    <div class="sec-head"><h2>Built for people who already work hard.</h2></div>
+    <div class="stories">
+      <article class="story"><div class="avatar" style="background:var(--protea-soft);color:var(--protea)">N</div><h4>Naledi</h4><p class="role">Aspiring baker, idea stage</p><p>Practises a trial bake on paper. Packaging and her own time were missing from her price.</p><p class="found">She fixed it before buying a single bag of flour.</p></article>
+      <article class="story"><div class="avatar" style="background:var(--jac-soft);color:var(--jac)">T</div><h4>Thabo</h4><p class="role">Freelance designer, operating</p><p>Fully booked and always short of money. Software, data and revision time were not in his quotes.</p><p class="found">He sees the exact price where he starts to earn what he planned.</p></article>
+      <article class="story"><div class="avatar" style="background:var(--mint-soft);color:var(--mint)">L</div><h4>Lerato</h4><p class="role">Food stall owner, operating</p><p>Her supplier raised prices. She tests three responses before deciding.</p><p class="found">She compares margin and cash for each choice first.</p></article>
+    </div>
+    <p class="fine">Illustrative scenarios used to explain the platform. They are not real customers.</p>
+  </div></section>
+
+  <section class="band dark-band" id="honesty"><div class="wrap">
+    <div class="sec-head"><h2>What HustleBridge will not do.</h2><p style="color:var(--hero-muted)">Trust is the product. People use this to make decisions about their savings and their livelihood.</p></div>
+    <div class="wont">
+      <div><h4><span data-i="check"></span>Promise a business will succeed</h4><p>A simulation exposes weak assumptions. It cannot predict real customers.</p></div>
+      <div><h4><span data-i="check"></span>Guarantee funding</h4><p>Funders decide for themselves. Your profile shows readiness and gaps.</p></div>
+      <div><h4><span data-i="check"></span>Tell you what you deserve to charge</h4><p>We show costs and trade-offs. You choose the price.</p></div>
+      <div><h4><span data-i="check"></span>Invent opportunities</h4><p>Every listing has a source link and a last-checked date.</p></div>
+      <div><h4><span data-i="check"></span>Call a loan free money</h4><p>Repayment, cost and risk are always explained.</p></div>
+      <div><h4><span data-i="check"></span>Apply or pay for you</h4><p>You go to the official source yourself, in your own time.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap final">
+    <h2>Ready to run a test month?</h2>
+    <div class="cta-row"><button class="btn pink" data-go="demo">Try the demo business</button><button class="btn ghost" data-go="setup">Start with my idea</button></div>
+  </div></section>
+
+  <footer class="foot"><div class="wrap">
+    <p class="flinks"><a href="/about">About</a><a href="/privacy">Privacy</a></p>
+    <p>HustleBridge is a practice tool. Simulations expose weak assumptions and cannot predict real customers. The Venture Readiness Profile is not a credit score, a qualification or a promise of funding.</p>
+    <p>Made for the FNB App of the Year Hackathon 2026. Youth entrepreneurship and small-business growth.</p>
+  </div></footer>
+</div>
+<script>
+  import '../scripts/landing.js';
+</script>
+</Base>

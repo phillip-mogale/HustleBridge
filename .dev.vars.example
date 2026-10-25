@@ -1,0 +1,5 @@
+# Copy to .dev.vars for `npm run preview`. Never commit .dev.vars.
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_ANON_KEY=YOUR-ANON-KEY
+AI_API_KEY=
+AI2_API_KEY=

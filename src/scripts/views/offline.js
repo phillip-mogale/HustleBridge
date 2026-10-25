@@ -1,0 +1,11 @@
+import { ic, toast, $ } from '../../lib/ui.js';
+export default {
+  render() {
+    return `<div class="offline"><svg viewBox="0 0 520 200" role="img" aria-label="A bridge with a gap in the middle"><path d="M0 160H520" stroke="var(--line)" stroke-width="3"/><rect x="60" y="100" width="22" height="60" rx="5" fill="var(--jac)"/><rect x="438" y="100" width="22" height="60" rx="5" fill="var(--jac)"/><path d="M71 100Q140 30 215 100" fill="none" stroke="var(--jac)" stroke-width="10" stroke-linecap="round"/><path d="M449 100Q380 30 305 100" fill="none" stroke="var(--jac)" stroke-width="10" stroke-linecap="round"/><path d="M230 90Q260 40 290 90" fill="none" stroke="var(--line)" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 16"/><circle cx="260" cy="38" r="9" fill="var(--protea)"/></svg>
+ <h1 class="h-page">You are offline.</h1><p class="p-page" style="margin-inline:auto">Your work is saved on this phone and will sync when you are back online.</p>
+ <div class="grid2" style="text-align:left"><section class="card"><h3>Still works</h3><ul class="list"><li><span class="dot done">${ic('check')}</span><div class="grow">Pricing tool</div></li><li><span class="dot done">${ic('check')}</span><div class="grow">Living simulation</div></li><li><span class="dot done">${ic('check')}</span><div class="grow">Missions you have opened</div></li><li><span class="dot done">${ic('check')}</span><div class="grow">Your Blueprint and profile</div></li></ul></section>
+  <section class="card"><h3>Needs a connection</h3><ul class="list"><li><span class="dot lock">${ic('info')}</span><div class="grow">The AI guide chat</div></li><li><span class="dot lock">${ic('info')}</span><div class="grow">Support hub updates</div></li><li><span class="dot lock">${ic('info')}</span><div class="grow">Saving to your account</div></li></ul></section></div>
+ <div class="cta-row" style="justify-content:center"><button class="btn" id="retry">Try again</button><button class="btn ghost" style="color:var(--text)" data-go="dashboard">Keep working offline</button></div></div>`;
+  },
+  mount() { $('#retry').onclick = () => { if (navigator.onLine) history.length > 1 ? history.back() : (location.href = '/dashboard'); else toast('Still offline. Nothing is lost.', 'warn'); }; }
+};

@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import { LOGO_DEFS } from '../lib/icons.js';
+const { title = 'HustleBridge', description = 'Practise the business. Build the evidence. Find your next step.', bodyClass = '' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1B1030" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="HustleBridge" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Light is the default theme. Dark is used only if the person chose it (or chose "system" on a dark device). -->
+    <script is:inline>
+      try { var t = localStorage.getItem('hb-theme'); if (t === 'dark' || t === 'system') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body class={bodyClass}>
+    <!-- Gradients for the HustleBridge logo. Zero-sized but rendered: gradients inside a display:none <svg> do not paint. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" set:html={`<defs>${LOGO_DEFS}</defs>`}></svg>
+    <a class="skip" href="#view">Skip to content</a>
+    <slot />
+    <div id="toasts" aria-live="polite"></div>
+    <script is:inline>
+      if ('serviceWorker' in navigator) addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+    </script>
+  </body>
+</html>

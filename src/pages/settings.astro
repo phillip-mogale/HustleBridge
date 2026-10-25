@@ -1,0 +1,10 @@
+---
+import App from '../layouts/App.astro';
+---
+<App name="preferences" onboarding={false}>
+  <script>
+    import { boot } from '../scripts/shell.js';
+    import view from '../scripts/views/settings.js';
+    boot(view, 'preferences');
+  </script>
+</App>

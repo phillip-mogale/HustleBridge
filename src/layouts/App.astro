@@ -1,0 +1,38 @@
+---
+import Base from './Base.astro';
+import { ic, LOGO, NAVG, NAV, NAV2, TABS, TITLES, route } from '../lib/icons.js';
+const { name, onboarding = false, title } = Astro.props;
+const ttl = title || TITLES[name] || '';
+---
+<Base title={`${ttl ? ttl + ' | ' : ''}HustleBridge`} bodyClass={'in-app' + (onboarding ? ' onboarding' : '')}>
+  <div id="app">
+    <aside class="side">
+      <a class="logo" href="/" aria-label="HustleBridge home"><span set:html={LOGO}></span>HustleBridge</a>
+      <nav class="nav" id="side-nav" aria-label="Main">
+        {NAVG.map(([g, l]) => (<>{g && <div class="navgrp">{g}</div>}{l.map(([v, lab, i]) => (<a href={route(v)} data-nav={v}><Fragment set:html={ic(i)} />{lab}</a>))}</>))}
+        <hr class="navhr" />
+        {NAV2.map(([v, lab, i]) => (<a href={route(v)} data-nav={v}><Fragment set:html={ic(i)} />{lab}</a>))}
+      </nav>
+      <div class="side-foot">
+        <div class="mini-card"><b>Blueprint confirmed</b><span id="side-biz">Your business. Edit it any time.</span></div>
+        <a class="btn ghost sm" href="/blueprint" style="color:var(--text)">Edit Blueprint</a>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="top">
+        <a class="logo" href="/" aria-label="HustleBridge home"><span set:html={LOGO}></span>HustleBridge</a>
+        <h2 id="ptitle">{ttl}</h2>
+        <span class="chip" title="Days in a row you practised"><Fragment set:html={ic('arch')} /><span id="c-streak">1</span><span class="lbl"> day streak</span></span>
+        <span class="chip ev" title="Pieces of evidence saved"><Fragment set:html={ic('spark')} /><span id="c-ev">0</span> evidence</span>
+        <button class="icon-btn" data-theme-toggle aria-label="Switch colour theme"></button>
+        <span class="me" aria-label="Your initial">Y</span>
+      </header>
+      <main id="view" tabindex="-1" data-view={name}></main>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Main">
+      {TABS.map((v) => { const n = NAV.find((x) => x[0] === v); return (<a href={route(v)} data-nav={v}><Fragment set:html={ic(n[2])} /><span>{n[1]}</span></a>); })}
+      <button data-more><Fragment set:html={ic('more')} /><span>More</span></button>
+    </nav>
+  </div>
+  <slot />
+</Base>

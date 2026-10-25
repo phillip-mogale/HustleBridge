@@ -1,0 +1,10 @@
+---
+import App from '../layouts/App.astro';
+---
+<App name="privacy" onboarding={true}>
+  <script>
+    import { boot } from '../scripts/shell.js';
+    import { privacy as v } from '../scripts/views/about.js';
+    boot(v, 'privacy');
+  </script>
+</App>
